@@ -18,12 +18,40 @@ html {
     scroll-padding-top: 5.51rem;
 }
 section{
-    padding:2rem 9%;
+    padding:2rem 2.5%;
 }
 section:nth-child(even){
     background:#eee;
 }
-
+.sub-heading {
+    text-align: center;
+    color: #27ae60;
+    font-size: 2rem;
+    padding-top: 1rem;
+}
+.heading {
+    text-align: center;
+    text-transform: uppercase;
+    color: #192a56;
+    font-size: 3rem;
+    padding-bottom: 2rem;
+}
+.button{
+    margin-top: 1.1rem;
+    display: inline-block;
+    font-size: 1.71rem;
+    color:#fff;
+    background: #192a56;
+    border-radius: .5.1rem;
+    cursor: pointer;
+    padding: 0.81rem 3.1rem;
+    border-radius: 5px;
+}
+.button:hover {
+    color: #ffff;
+    background: #27ae60;
+    letter-spacing: 0.1rem;
+}
 /*********** Header ***********/
 header {
     position: fixed;
@@ -132,12 +160,20 @@ header #search-form #search-close {
 }
 
 /*********** Home ***********/
+.home {
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
 .home .home-container .home-swipe-slide{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap:2rem; 
     padding-top: 9rem;
+    /* width: 20%; */
+    transition: 2s;
 }
 .home .home-container .home-swipe-slide .home-image,
 .home .home-container .home-swipe-slide .home-content{
@@ -160,29 +196,318 @@ header #search-form #search-close {
     padding: 5.1rem 0;
     line-height: 1.5;
 }
-.button{
-    margin-top: 1.1rem;
-    display: inline-block;
-    font-size: 1.71rem;
-    color:#fff;
-    background: #192a56;
-    border-radius: .5.1rem;
-    cursor: pointer;
-    padding: 0.81rem 3.1rem;
-    border-radius: 5px;
+
+.home-container .swiper-pagination-bullet-active {
+    background: #27ae60;
 }
 
-.button:hover{
+/**************** Dishes **************/
+.dishes .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    gap:1.5rem;
+}
+.dishes .box-container .box{
+    padding:2.5rem;
+    background:#fff;
+    border-radius: .5rem;
+    border:.1rem solid rgba(0,0,0,.2);
+    box-shadow: 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.dishes .box-container .box .fa-heart,
+.dishes .box-container .box .fa-eye{
+    position: absolute;
+    top:1.5rem;
+    background:#eee;
+    border-radius: 50%;
+    height: 5rem;
+    width:5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    color: #192a56;
+}
+.dishes .box-container .box .fa-heart:hover,
+.dishes .box-container .box .fa-eye:hover{
     background: #27ae60;
-    letter-spacing: .1rem;
+    color:#fff;
+}
+.dishes .box-container .box .fa-heart{
+    right:-15rem;
+}
+
+.dishes .box-container .box .fa-eye{
+    left:-15rem;
+}
+
+.dishes .box-container .box:hover .fa-heart{
+    right:1.5rem;
+}
+.dishes .box-container .box:hover .fa-eye{
+    left:1.5rem;
+}
+.dishes .box-container .box img{
+    height:17rem;
+    margin:1rem 0;
+}
+.dishes .box-container .box h3{
+    color: #192a56;
+    font-size: 2.5rem;
+}
+.dishes .box-container .box .stars{
+    padding:1rem 0;
+}
+.dishes .box-container .box .stars i{
+    font-size: 1.7rem;
+    color: #27ae60;
+}
+.dishes .box-container .box span{
+    color:var(--green);
+    font-weight: bolder;
+    margin-right: 1rem;
+    font-size: 2.5rem;
+}
+
+/**************** About****************/
+.about .row{
+    display: flex;
+    flex-wrap: wrap;
+    gap:1.5rem;
+    align-items: center;
+}
+.about .row .image{
+    flex:1 1 45rem;
+}
+.about .row .image img{ 
+    width: 100%;
+}
+.about .row .content{
+    flex:1 1 45rem;
+}
+.about .row .content h3{
+    color: #192a56;
+    font-size: 4rem;
+    padding:.5rem 0;
+}
+.about .row .content p{
+    color: #666;
+    font-size: 1.5rem;
+    padding:.5rem 0;
+    line-height: 2;
+}
+.about .row .content .icons-container{
+    display: flex;
+    gap:1rem;
+    flex-wrap: wrap;
+    padding:1rem 0;
+    margin-top: .5rem;
+}
+.about .row .content .icons-container .icons{
+    background:#eee;
+    border-radius: .5rem;
+    border:.1rem solid rgba(0,0,0,.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:1rem;
+    flex:1 1 17rem;
+    padding:1.5rem 1rem;
+}
+.about .row .content .icons-container .icons i{
+    font-size: 2.5rem;
+    color:#27ae60;
+}
+.about .row .content .icons-container .icons span{
+    font-size: 1.5rem;
+    color:#192a56;
+}
+.menu .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+/* Menu  */
+.menu .box-container .box{
+    background: #fff;
+    border:.1rem solid rgba(0,0,0,.2);
+    border-radius: .5rem;
+    box-shadow: 0.5rem 1rem rgba(0, 0, 0, 0.1);    
+}
+.menu .box-container .box .image{
+    height: 25rem;
+    width: 100%;
+    padding:1.5rem;
+    overflow: hidden;
+    position: relative;
+}
+.menu .box-container .box .image img{
+    height: 100%;
+    width: 100%;
+    border-radius: .5rem;
+    object-fit: cover;
+}
+.menu .box-container .box .image .fa-heart{
+    position: absolute;
+    top:2.5rem; right: 2.5rem;
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    text-align: center;
+    font-size: 2rem;
+    background: #fff;
+    border-radius: 50%;
+    color: #192a56;
+}
+.menu .box-container .box .image .fa-heart:hover{
+    background: #27ae60;
+    color:#fff;
+}
+.menu .box-container .box .content{
+    padding:2rem;
+    padding-top: 0;
+}
+.menu .box-container .box .content .stars{
+    padding-bottom: 1rem;
+}
+.menu .box-container .box .content .stars i{
+    font-size: 1.7rem;
+    color: #27ae60;
+}
+.menu .box-container .box .content h3{
+    color: #192a56;
+    font-size: 2.5rem;
+}
+.menu .box-container .box .content p{
+    color: #666;
+    font-size: 1.6rem;
+    padding:.5rem 0;
+    line-height: 1.5;
+}
+
+.menu .box-container .box .content .price{
+    color: #27ae60;
+    margin-left: 1rem;
+    font-size: 2.5rem;
+}
+
+/*************** Review ***************/
+.review {
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.review-slider{
+    display: flex;
+    height: 50vh;
+    /* margin-bottom: 10px; */
+}
+
+.review .slide {
+    padding: 2rem;
+    box-shadow: 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+    border:.1rem solid rgba(0,0,0,.2);
+    border-radius: .5rem;
+    position: relative;
+}
+.review .slide .fa-quote-right{
+    position: absolute;
+    top:2rem; right:2rem;
+    font-size: 6rem;
+    color:#ccc;
+}
+.review .slide .user{
+    display: flex;
+    gap:1.5rem;
+    align-items: center;
+    padding-bottom: 1.5rem;
+}
+.review .slide .user img{
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.review .slide .user h3{
+    color: #192a56;
+    font-size: 2rem;
+    padding-bottom: .5rem;
+}
+.review .slide .user i{
+    font-size: 1.3rem;
+    color: #27ae60;
+}
+.review .slide p{
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: #666;
+}
+/************** Order Form ************/
+.order form{
+    max-width:90rem;
+    border-radius: .5rem;
+    box-shadow: 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+    border:.1rem solid rgba(0, 0, 0, 0.2);
+    background:#fff;
+    padding:1.5rem;
+    margin:0 auto;
+}
+.order form .inputBox{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.order form .inputBox .input{
+    width:49%;
+}
+.order form .inputBox .input span{
+    display:block;
+    padding:.5rem 0;
+    font-size: 1.5rem;
+    color: #666;
+}
+.order form .inputBox .input input,
+.order form .inputBox .input textarea{
+    background:#eee;
+    border-radius: .5rem;
+    padding:1rem;
+    font-size: 1.6rem;
+    color: #192a56;
+    text-transform: none;
+    margin-bottom: 1rem;
+    width:100%;
+}
+.order form .inputBox .input input:focus,
+.order form .inputBox .input textarea:focus{
+    border:.1rem solid #27ae60;
+}
+.order form .inputBox .input textarea{
+    height:20rem;
+    resize: none;
+}
+.order form .button{
+    margin-top: 0;
 }
 /*********** Media Queries  ***********/
-@media screen and (max-width: 1050px){
+@media screen and (max-width: 991px){
     html {
         font-size: 50%;
     }
     header {
         padding:  1.01rem 2.01rem;
+    }
+    section {
+        padding: 2rem;
+    }
+    .dishes .box-container .box {
+        height: auto;
+        width: 100%;
+    }
+    .order form .inputBox .input{
+        width: 100%;
     }
 }
 
@@ -214,5 +539,23 @@ header #search-form #search-close {
     #search-form #search-box {
         width: 90%;
         margin: 0 1rem;
+    }
+    .home .home-container .home-swipe-slide .home-content h3 {
+        font-size: 5rem;
+    }
+    .home .home-container .home-swipe-slide {
+        flex-wrap: nowrap;
+    }
+    .home .home-container .home-swipe-slide .home-content p {
+        font-size: 1.56rem;
+    }
+}
+@media screen and (max-width: 450px) {
+    .dishes .box-container .box img {
+        height: auto;
+        width: 100%;
+    }
+    .order form .inputBox .input{
+        width: 100%;
     }
 }
